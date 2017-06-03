@@ -1,0 +1,58 @@
+<style> 
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" /> <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script> 
+<style>
+<div class='row'>
+
+	<div class ='col-md-2'>
+		<p>
+		Search : <input ng-model = "$ctrl.find" >
+		</p>
+		<p>
+	        Sort by:
+	        <select ng-model="$ctrl.orderProp">
+	          <option value="name">Alphabetical</option>
+	          <option value="age" default>Newest</option>
+	        </select>
+      </p>
+
+	</div>
+
+	
+	<div class='col-md-10'>
+		<ul>
+		  <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.find | orderBy : $ctrl.orderProp" class="thumbnail">
+		  	<a href="#!/phones/{{phone.id}}" class="thumb">
+     	 		<img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+    		</a>
+    		<a href="#!/phones/{{phone.id}}">{{phone.name}}</a>
+    		<p>{{phone.snippet}}</p>
+		  </li>
+		</ul>
+	</div>
+</div>'
+
+<!-- 
+ <div class="col-md-4">
+            <label class="control-label">Available Date</label>
+            <div class="input-form">
+                <input type="text" class="form-control" uib-datepicker-popup="{{dateFormat}}" ng-model="AvailableDate" name="availabledate" is-open="availableDatePopup.opened" datepicker-options="availableDateOptions" ng-required="true" close-text="Close" ng-click="OpenAvailableDate()"
+                ng-change="ChangeExpiryMinDate(AvailableDate)" placeholder="Available Date" />
+                <label ng-show="showMessages && addJobForm.availabledate.$invalid" class="text-danger">
+                    Available Date is required.
+                </label>
+            </div>
+</div> -->
+
+ng:<input type="text" datepicker ng-model="date2" />
+  <span>{{date2}}</span>
+</br></br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<!-- <script src="datepicker.js"></script> -->
+
+
